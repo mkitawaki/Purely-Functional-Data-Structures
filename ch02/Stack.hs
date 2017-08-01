@@ -1,7 +1,9 @@
+{-# LANGUAGE MultiParamTypeClasses #-}
+
 module Stack(Stack(..)) where
   import Prelude hiding (head, tail)
 
-  class Stack s where
+  class Stack s a where
     empty :: s a 
     isEmpty :: s a -> Bool
     cons :: a -> s a -> s a

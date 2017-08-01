@@ -1,10 +1,13 @@
+{-# LANGUAGE FlexibleInstances #-} 
+{-# LANGUAGE MultiParamTypeClasses #-} 
+
 module CustomStack(CustomStack(..)) where
   import Prelude hiding (head, tail)
   import Stack
 
   data CustomStack a = Nil | Cons a (CustomStack a) deriving Show
 
-  instance Stack CustomStack where
+  instance Stack CustomStack a where
     empty = Nil
     isEmpty Nil = True
     isEmpty _ = False
